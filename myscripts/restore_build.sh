@@ -1,12 +1,16 @@
 #!/bin/bash
 
+script_log="setup_yocto.log"
+exec > >(tee -a "$script_log") 2>&1
 # Define the Yocto build and config paths
-SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+SCRIPT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 BASE_DIR="${SCRIPT_DIR}/../"
 CONFIG_DIR="${BASE_DIR}/save_configs/qemux86-64"
 SOURCES_DIR="sources/"
 POKY_DIR="poky"
 
+
+echo "SCRIPT_DIR dir location:${SCRIPT_DIR}"
 echo "sources dir location:${BASE_DIR}${SOURCES_DIR}"
 cd "${BASE_DIR}${SOURCES_DIR}" || { echo "Failed to enter sources directory"; exit 1; }
 
@@ -34,7 +38,7 @@ if ! command -v bitbake &> /dev/null; then
     exit 0
 fi
 
-cd build
+# cd build
 # Final confirmation
 echo "✅ Yocto build environment set up with saved configurations."
 echo "📍 You're now inside the build directory: $(pwd)"

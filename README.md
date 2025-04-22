@@ -9,5 +9,14 @@ bitbake -c cleanall systemd
 bitbake -c fetch systemd
 bitbake core-image-full-cmdline
 
+# rsyslog extend 
+bitbake -c cleanall rsyslog
+bitbake rsyslog
+bitbake core-image-full-cmdline
+## Verify the Recipe Source
+bitbake-layers show-recipes | grep rsyslog
+bitbake -e rsyslog | grep ^SRC_URI
+Use bitbake -c devshell rsyslog and ls $WORKDIR to inspect if the files are copied.
+
 # Once the build is complete, use the runqemu command:
 runqemu qemux86-64

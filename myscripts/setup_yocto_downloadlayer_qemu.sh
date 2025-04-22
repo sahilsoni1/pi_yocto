@@ -12,10 +12,10 @@ OE_DIR="meta-openembedded"
 
 # Set fixed branch and commit
 POKY_BRANCH="kirkstone"
-POKY_COMMIT="9cd6b3ad8b9b9574f1a9f957246b744abb993c2d"   # Replace with your desired commit
+POKY_COMMIT="378cd5368d34d9ed4b20c9a2c17f53dd64fc48c9"   # Replace with your desired commit
 
 OE_BRANCH="kirkstone"
-OE_COMMIT="2920d4909236106e1a36d56b3b20762a308ba3d4"    # Replace with your desired commit
+OE_COMMIT="f8dddbfcbfe502cb71375a7a907e61a92e8d4474"    # Replace with your desired commit
 
 echo "sources dir location:${BASE_DIR}${SOURCES_DIR}"
 cd "${BASE_DIR}${SOURCES_DIR}" || { echo "Failed to enter sources directory"; exit 1; }

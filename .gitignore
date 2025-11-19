@@ -1,3 +1,8 @@
 # Specify filepatterns you want git to ignore.
 /sources/build
+# Ignore build directory
+/sources/build_rpi4_B/**
 
+# Allow images folder
+!/sources/build_rpi4_B/images/
+!/sources/build_rpi4_B/images/**

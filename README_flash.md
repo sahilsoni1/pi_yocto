@@ -116,6 +116,8 @@ sudo umount /dev/sda*
 If you decompressed the image, flash it with `dd`:
 
 ```
+sudo dd if=/dev/zero of=/dev/sda bs=1M count=100 status=progress
+sync
 sudo dd if=myimage.wic of=/dev/sda bs=4M status=progress conv=fsync
 sync
 ```

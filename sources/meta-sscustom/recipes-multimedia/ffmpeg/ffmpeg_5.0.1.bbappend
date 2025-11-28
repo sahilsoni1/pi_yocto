@@ -7,5 +7,5 @@ PACKAGECONFIG:append = " sdl2"
 # Enable OpenGL ES (correct name is gles2)
 PACKAGECONFIG:append = " gles2"
 
-# Remove invalid ones
+# Remove invalid ones test
 PACKAGECONFIG:remove = " v4l2-request kmsdrm v4l2 libv4l opengl"

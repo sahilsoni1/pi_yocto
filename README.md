@@ -20,3 +20,13 @@ Use bitbake -c devshell rsyslog and ls $WORKDIR to inspect if the files are copi
 
 # Once the build is complete, use the runqemu command:
 runqemu qemux86-64
+# get toolchain
+bitbake core-image-weston-debug -c populate_sdk
+
+bitbake -c pydevshell rpi-config
+print(d.getVar('WORKDIR'))
+print(d.getVar('FILESEXTRAPATHS'))
+print(d.getVar('SRC_URI'))
+print(d.getVar('D'))
+print(d.getVar('PN'))
+bitbake libsdl2 -c logerror

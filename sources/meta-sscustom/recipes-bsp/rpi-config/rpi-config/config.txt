@@ -1,0 +1,43 @@
+# -------------------------------
+# GPU MEMORY AND CMA (CRITICAL)
+# -------------------------------
+gpu_mem=256
+cma=512M
+
+# -------------------------------
+# ENABLE FULL KMS GPU DRIVER
+# vc4-kms-v3d = REQUIRED for:
+# - FFmpeg hardware decoder (v4l2-m2m)
+# - SDL2 (kmsdrm backend)
+# - OpenGL ES acceleration
+# -------------------------------
+dtoverlay=vc4-kms-v3d
+max_framebuffers=2
+#disable_fw_kms_setup=1
+
+# -------------------------------
+# HDMI / DISPLAY SETTINGS
+# -------------------------------
+hdmi_force_hotplug=1
+hdmi_drive=2
+disable_overscan=1
+
+# -------------------------------
+# PERFORMANCE AND 64-BIT
+# -------------------------------
+arm_64bit=1
+arm_boost=1
+
+# -------------------------------
+# AUDIO (required by SDL2)
+# -------------------------------
+dtparam=audio=on
+
+# -------------------------------
+# OPTIONAL BUT SAFE
+# -------------------------------
+camera_auto_detect=1
+display_auto_detect=1
+auto_initramfs=1
+
+[all]
